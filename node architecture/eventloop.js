@@ -22,3 +22,4 @@ setTimeout(() => console.log("this is settimeout"), 0);
 //not following as diagram ,here order cannot be gureenteee due to concept called i/o polling
 
 
+
