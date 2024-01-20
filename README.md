@@ -1,4 +1,3 @@
-# Playing with nodejs
-this repo consist of some basic and core concept of nodejs .
+# Backend with nodejs
 
- 
+This repo consist of some backend topic that i am learning
