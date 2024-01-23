@@ -1,0 +1,47 @@
+**) KEY => Keys are the attribute which help us to uniqulty identify each tuples in table;
+
+There are 4 type of key.They are:
+
+1). Super Key: =>A super key is a set of one or more columns (attributes) that, taken together, can uniquely identify each row in a table.
+
+*) A super key may contain more columns than necessary to uniquely identify a row. It could include additional columns that are not required for uniqueness.
+
+*) Every candidate key is a super key, but not every super key is a candidate key.
+-----------------------------------------
+
+
+2).Candidate Key: => A candidate key is a minimal super key, meaning it is a set of columns that uniquely identifies each row in a table, and no subset of those columns can uniquely identify a row.
+
+*) In simpler terms, a candidate key is a super key with the fewest possible columns.
+
+*) A table may have multiple candidate keys.
+The primary key is selected from the candidate keys to be the main unique identifier for a table.
+-------------------------------------------
+
+
+3).Primary Key: => The primary key is a candidate key that is chosen as the main unique identifier for a table which shouldn't be null.
+
+*) It is used to enforce entity integrity, meaning that each row in the table is uniquely identified by its primary key.
+
+*) By default, the primary key also implies a unique constraint and a NOT NULL constraint on the specified columns.
+-----------------------------------------------
+
+
+4).Alternate Key: => An alternate key is any candidate key that is not selected as the primary key.
+
+*) While the primary key is the main unique identifier, alternate keys are still unique and can be used to identify rows uniquely
+
+-------------------------------------------------
+
+5) Composite key: => A key that consists of two or more attributes that together uniquely idenity the record(row) in a table.
+
+----------------------------------------------------
+
+6) Foreign key: => A foreign key is a column in a database table that links to the primary key in another table, enforcing referential integrity.
+*) It ensures that values in the foreign key column correspond to existing values in the referenced table. 
+
+*) Foreign keys establish relationships between tables.
+
+
+
+

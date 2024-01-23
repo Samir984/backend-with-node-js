@@ -1,0 +1,28 @@
+*) Normalization => Normalization is a database design process that organizes and structures data to reduce redundancy data inconsistency and improve efficiency. It involves dividing tables into smaller, related tables and defining relationships, ensuring data integrity while minimizing duplication. Normalization typically follows a set of normalization forms (e.g., First Normal Form, Second Normal Form) to systematically optimize database design.
+
+
+
+*) Every form of Normalization depend on each other.
+
+There are five form of Normalization: 
+ 
+1. First Normal Form (1NF):
+Ensure atomic values: Each column should contain only atomic (indivisible) values, and there should be no repeating groups.
+
+2. Second Normal Form (2NF):
+Meet 1NF criteria.
+Eliminate partial dependencies: Remove any columns that are partially dependent on the primary key.
+** Eachh non key attribute must be entirely dependent on primary key.  
+
+
+
+3. Third Normal Form (3NF):
+Meet 2NF criteria.
+Eliminate transitive dependencies: Remove columns that are transitively dependent on the primary key through another non-prime attribute.
+
+Additional Normal Forms (4NF, 5NF, etc.):
+Address more specific types of dependencies to further refine the database design.
+
+
+
+Here is yotube playlist to understand all above concept clearly ->https://youtube.com/playlist?list=PLNITTkCQVxeXryTQvY0JBWTyN9ynxxPH8&si=eIPRN8V-zHljleqT
