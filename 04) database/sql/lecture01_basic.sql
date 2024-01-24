@@ -97,6 +97,8 @@ SELECT <column 1 name>,<column 2 name> FROM <table name>;
 
 //--* 2) SELECT * FROM students ORDER BY DateOfBirth DESC LIMIT 2; --> (give top 2 youngest students from table )
 
+//--* 3) SELECT * FROM students ORDER BY DateOfBirth DESC LIMIT 2 OFFSET 2; --> (give top 2 youngest students from table after 2 offset (ex: A,B,C,D young students)=> you get (C,D) leaving 2 (A,B)des offset))
+
 -- use of WHERE and ORDER BY keyword with SELECT 
 -- Examples:
 

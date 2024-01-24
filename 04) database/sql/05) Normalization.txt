@@ -25,4 +25,5 @@ Address more specific types of dependencies to further refine the database desig
 
 
 
-Here is yotube playlist to understand all above concept clearly ->https://youtube.com/playlist?list=PLNITTkCQVxeXryTQvY0JBWTyN9ynxxPH8&si=eIPRN8V-zHljleqT
+Here is yotube playlist to understand all above concept clearly -> (https://youtube.com/playlist?list=PLNITTkCQVxeXryTQvY0JBWTyN9ynxxPH8&si=eIPRN8V-zHljleqT)
+

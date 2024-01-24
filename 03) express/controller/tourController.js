@@ -1,6 +1,9 @@
 const fs = require('fs');
+
+// Add an empty line here
+
 const tours = JSON.parse(
-  fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`)
+  fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`),
 );
 
 exports.checkId = (req, res, next, val) => {
@@ -46,7 +49,13 @@ exports.getTour = (req, res) => {
 
 exports.createTour = (req, res) => {
   const newId = tours[tours.length - 1].id + 1;
-  const newTour = Object.assign({ id: newId }, req.body);
+  const { body } = req;
+
+  const newTour = {
+    id: newId,
+    ...body,
+  };
+
   tours.push(newTour);
   fs.writeFile(
     `${__dirname}/dev-data/data/tours-simple.json`,
@@ -59,7 +68,7 @@ exports.createTour = (req, res) => {
           tours: newTour,
         },
       });
-    }
+    },
   );
 };
 

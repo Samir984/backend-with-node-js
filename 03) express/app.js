@@ -8,7 +8,6 @@ const app = express();
 
 // 1) Middleware
 
-
 app.use(morgan('dev'));
 app.use(express.json());
 app.use((req, res, next) => {
