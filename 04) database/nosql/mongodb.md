@@ -1,0 +1,99 @@
+// operator are denoted by $ in mongodb
+
+1\* show dbs => to see all database;
+
+2\* use <db_name> => to switch database ,if not exit mongodb will create the database .
+
+3\* db.dropDatabase("<collection name>") => to delete to selected dropDatabase
+
+4\* db.createCollection("<collection nambe>") => to create the collection on database;
+
+4\* db.<collection name>.drop() => to drop the collection from selected db;
+
+5\* db.<collection name>.insertOne({key:"value"}) => to insert document into collection , if collection doesn't exit is will create that collection for you.
+
+6\* db.<collection name>.insertMany([{},{}]) -> to insert multiple document in collection;
+
+---
+
+# //find syntax
+
+7\* db.collection_name.find(
+<query>,
+<projection>=>
+)
+
+# projection=>projection: This is an optional parameter that specifies the fields to include or exclude from the result. If not provided, all fields will be included.
+
+---
+
+- //example:
+
+- db.students.find({age:{$gt:14}},{\_id:false,name:true}) => to see students having age greater then 14 and show name field only excuding \_id field
+
+- db.students.find({},{name:true}) -> show name name field from every document
+
+- db.students.find({\_id: ObjectId('65b0bb504d4b215b6683753a')}) => find as per id
+
+# update syntax
+
+8\* db.collection.updateOne(
+
+<filter> // The filter criteria to match the document
+<update>, // The modification to apply to the matched document
+)
+
+- example
+
+- db.students.updateOne({ name: "ram" }, { $set: { name: "ramu" } }) -> to update name:"ram" to "ramu"
+
+- db.students.updateOne({ name: "ram" }, { $unset: { name: "ramu" } }) -> to update name field from that docuemnt
+
+- db.students.updateMany( { name: { $exists: false } }, { $set: { name: "random" } }) => if any document don't have name then it will set tha name:"random"
+
+---
+
+# //delete syntax
+
+9.1\* db.collection_name.deleteOne(
+<filter>,
+<options>
+)
+
+9.2\* db.collection_name.deleteMany(
+
+<filter>,
+<options>
+)
+
+\*\* //example
+
+- db.students.deleteOne({ name: "random" })
+
+- // db.students.deleteMany({ age: { $gt: 30 } })
+
+---
+
+# Comparison Operators:
+
+=> $eq, $ne, $gt, $gte, $lt, $lte
+
+# Logical Operators:
+
+=> $and, $or, $not, $nor
+
+# Element Operators:
+
+=> $exists, $type
+
+# Array Operators:
+
+=> $in, $nin, $all
+
+# Regular Expression Operators:
+
+=> $regex
+
+# Update Operators:
+
+=> $set, $unset, $inc, $push, $pull
