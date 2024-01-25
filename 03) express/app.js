@@ -1,23 +1,13 @@
 const express = require('express');
-const morgan = require('morgan');
-
-const tourRouter = require('./routes/tourRoutes');
-const userRouter = require('./routes/userRoutes');
-
+const rootRoute = require('./route/rootRoute.js');
 const app = express();
 
-// 1) Middleware
-
-app.use(morgan('dev'));
 app.use(express.json());
 app.use((req, res, next) => {
-  console.log('hello from Middleware');
+  console.log('hello form middleware');
   next();
 });
 
-// 3) Routers
-app.use('/api/v1/tours', tourRouter);
-app.use('/api/v1/users', userRouter);
-
-//servering lisinig
+app.use('/', rootRoute);
+console.log('app');
 module.exports = app;
