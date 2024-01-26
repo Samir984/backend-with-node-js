@@ -1,5 +1,5 @@
 const express = require('express');
-const rootRoute = require('./route/rootRoute.js');
+const jokeRoute = require('./route/jokeRoute.js');
 const app = express();
 
 app.use(express.json());
@@ -8,6 +8,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', rootRoute);
+app.use('/', jokeRoute);
 console.log('app');
 module.exports = app;
