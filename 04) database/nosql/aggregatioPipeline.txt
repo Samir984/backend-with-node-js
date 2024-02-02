@@ -1,0 +1,32 @@
+// In MongoDB, the aggregation pipeline is a framework for performing data transformations and analysis on the documents in a collection. It allows you to process data through a sequence of stages, where each stage performs a specific operation on the input data and passes the result to the next stage.
+
+
+
+*) Syntax
+
+use your_database
+
+db.your_collection.aggregate([
+    // Stage 1: Match documents based on a condition
+    { $match: { /* Your match condition */ } },
+
+    // Stage 2: Group documents based on certain criteria
+    { $group: { /* Your grouping criteria */ } },
+
+    // Stage 3: Project fields to include/exclude in the output
+    { $project: { /* Your projection specifications */ } },
+
+    // Additional stages as needed
+    // { $unwind: /* ... */ },
+    // { $sort: /* ... */ },
+    // { $limit: /* ... */ },
+    // { $skip: /* ... */ },
+])
+
+
+// exmaples 
+
+
+
+
+
