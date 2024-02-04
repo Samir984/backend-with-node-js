@@ -25,8 +25,65 @@ db.your_collection.aggregate([
 
 
 // exmaples 
+db.sales.aggregate([
+    // Stage 1: Match documents for a specific product
+    { $match: { product: 'A' } },
+
+    // Stage 2: Group by product and calculate total amount
+    {
+        $group: {
+            _id: '$product',
+            totalAmount: { $sum: '$amount' },
+            averageAmount: { $avg: '$amount' },
+            count: { $sum: 1 },
+        }
+    },
+
+    // Stage 3: Project to rename fields and add calculated fields
+    {
+        $project: {
+            _id: 0,
+            productName: '$_id',
+            totalAmount: 1,
+            averageAmount: { $round: ['$averageAmount', 2] },
+            count: 1,
+        }
+    },
+
+    // Stage 4: Sort by total amount in descending order
+    { $sort: { totalAmount: -1 } },
+
+    // Stage 5: Limit to the top 3 results
+    { $limit: 3 },
+]);
 
 
-
-
-
+db.books.aggregate([
+  {
+    $lookup: {
+      from: "authors",
+      localField: "author_id",
+      foreignField: "_id",
+      as: "author"
+    }
+  },
+  {
+    $unwind: "$author"
+  },
+  {
+    $project: {
+      title: 1,
+      genre: 1,
+      publication_date: 1,
+      pages: 1,
+      price: 1,
+      author: {
+        name: "$author.name",
+        nationality: "$author.nationality",
+        birthdate: "$author.birthdate",
+        email: "$author.email",
+        books_written: "$author.books_written"
+      }
+    }
+  }
+]);

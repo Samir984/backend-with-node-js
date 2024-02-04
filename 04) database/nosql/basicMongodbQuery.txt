@@ -31,7 +31,7 @@
 
 - db.students.find({age:{$gt:14}},{_id:false,name:true}) => to see students having age greater then 14 and show name field only excuding _id field
 
-- db.students.find({},{name:true}) -> show name name field from every document
+- db.students.find({},{name:true}) -> show see name field from every document
 
 - db.students.find({_id: ObjectId('65b0bb504d4b215b6683753a')}) => find as per id
 
