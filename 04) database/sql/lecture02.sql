@@ -1,4 +1,4 @@
-DELECT FROM First;
+DELECT FROM <table name>;
 -- to Delect whole row of table
  
 DELETE FROM <table name> WHERE {comparision ..} ORDER BY {..} LIMIT ..
